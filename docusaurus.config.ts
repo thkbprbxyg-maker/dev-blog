@@ -140,4 +140,3 @@ if (blogEnabled) {
 }
 
 export default config;
-EOF
