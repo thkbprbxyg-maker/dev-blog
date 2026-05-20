@@ -49,3 +49,4 @@ Added the following environment variables:
 - Updated title and description
 - Updated deployment section
 - Removed contributing section
+
