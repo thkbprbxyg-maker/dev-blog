@@ -1,3 +1,4 @@
+cat > docusaurus.config.ts << 'EOF'
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
@@ -5,33 +6,24 @@ import {config as dotenvconfig}  from "dotenv";
 
 dotenvconfig();
 
-/* TODO: change to read configuration from environment */
 const blogEnabled = Boolean(process.env.BLOG_ENABLED === 'true')
+const gitRepositoryUrl = process.env.GIT_REPOSITORY_URL ?? "https://github.com/thkbprbxyg-maker/dev-blog";
 
 const config: Config = {
-  title: 'DSO Live Demo Docs',
-  tagline: 'Dinosaurs are cool',
+  title: 'Ibrahim Onat - DevSecOps Blog',
+  tagline: 'Ibrahim Onat - DevSecOps Enthusiast with a passion for Security and Technology',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
-  url: process.env.DEPLOYMENT_URL ?? "https://spmse.github.io",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
+  url: process.env.DEPLOYMENT_URL ?? "https://thkbprbxyg-maker.github.io",
   baseUrl: process.env.BASE_URL ?? "/",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: process.env.GITHUB_ORG, // Usually your GitHub org/user name.
-  projectName: process.env.GITHUB_PROJECT, // Usually your repo name.
-
+  organizationName: process.env.GITHUB_ORG,
+  projectName: process.env.GITHUB_PROJECT,
   deploymentBranch: process.env.DEPLOYMENT_BRANCH,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -43,23 +35,16 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/spmse/dev-blog-template',
+          editUrl: gitRepositoryUrl,
         },
-        blog: blogEnabled ? 
+        blog: blogEnabled ?
           {
             showReadingTime: true,
             feedOptions: {
               type: ['rss', 'atom'],
               xslt: true,
             },
-            // Please change this to your repo.
-            // Remove this to remove the "edit this page" links.
-            editUrl:
-              'https://github.com/spmse/dev-blog-template',
-            // Useful options to enforce blogging best practices
+            editUrl: gitRepositoryUrl,
             onInlineTags: 'warn',
             onInlineAuthors: 'warn',
             onUntruncatedBlogPosts: 'warn',
@@ -73,10 +58,9 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'Ibrahim Onat',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -89,7 +73,7 @@ const config: Config = {
           label: 'Docs',
         },
         {
-          href: 'https://github.com/spmse/dev-blog-template',
+          href: gitRepositoryUrl,
           label: 'Github',
           position: 'right',
         },
@@ -105,22 +89,9 @@ const config: Config = {
               label: 'Tutorial',
               to: '/docs/guides/intro',
             },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'Projects',
+              to: '/docs/projects',
             },
           ],
         },
@@ -129,19 +100,22 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            }
+              href: gitRepositoryUrl,
+            },
+            {
+              label: 'Template',
+              href: 'https://github.com/Developer-Akademie-DevSecOpsKurs/dev-blog-template',
+            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Sven Patrick Meier (spmse). Built with Docusaurus and 💚.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Ibrahim Onat. Built with Docusaurus. extended from the developer-akademie-starter`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
       additionalLanguages: ['powershell', 'hcl'],
       magicComments: [
-        // Remember to extend the default highlight class name as well!
         {
           className: 'theme-code-block-highlighted-line',
           line: 'highlight-next-line',
@@ -156,7 +130,6 @@ const config: Config = {
   } satisfies Preset.ThemeConfig,
 };
 
-
 if (blogEnabled) {
   (config.themeConfig.navbar as any).items.push({to: '/blog', label: 'Blog', position: 'left'});
   (
@@ -168,3 +141,5 @@ if (blogEnabled) {
 }
 
 export default config;
+EOF
+
