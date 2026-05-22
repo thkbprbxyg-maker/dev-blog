@@ -25,3 +25,4 @@ docker run -d -p 3000:3000 bkimminich/juice-shop
 | [Product Tampering](./challenges/product-tampering/README.md) | Broken Access Control | ⭐⭐⭐ | [Video](https://www.loom.com/share/ec339e68b20d4a0984769afbed3f9714) | Attackers can modify product data without authentication, leading to misinformation or financial damage |
 | [Database Schema](./challenges/database-schema/README.md) | Injection | ⭐⭐⭐ | [Video](https://www.loom.com/share/ec339e68b20d4a0984769afbed3f9714) | Attackers can map the entire database structure and plan further attacks like data exfiltration |
 | [Payback Time](./challenges/payback-time/README.md) | Improper Input Validation | ⭐⭐⭐ | [Video](https://www.loom.com/share/ec339e68b20d4a0984769afbed3f9714) | Attackers can place orders with negative totals causing serious financial damage to the shop |
+
