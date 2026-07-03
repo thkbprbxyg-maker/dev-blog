@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
           </button>
         </div>
         <div className={styles.imageWrapper}>
-          <img src="/img/ibrahim.jpg" alt="Ibrahim Onat" className={styles.photo} />
+          <img src="/dev-blog/img/ibrahim.jpg" alt="Ibrahim Onat" className={styles.photo} />
         </div>
       </div>
     </section>
