@@ -1,0 +1,12 @@
+.page {
+  background: #0d1117;
+  min-height: 100vh;
+}
+
+:global(.navbar) {
+  display: none;
+}
+
+:global(.main-wrapper) {
+  padding-top: 0 !important;
+}
