@@ -4,13 +4,13 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: transparent;
+  background: #3d5af1;
   transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .scrolled {
-  background: #1a1a2e;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  background: #3d5af1;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 }
 
 .inner {
@@ -23,10 +23,7 @@
 }
 
 .logo {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #4f8ef7;
-  letter-spacing: 2px;
+  display: none;
 }
 
 .nav {
@@ -37,31 +34,15 @@
 .navLink {
   background: none;
   border: none;
-  color: #e0e0e0;
-  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
   cursor: pointer;
   padding: 0.25rem 0;
-  position: relative;
   transition: color 0.2s;
 }
 
-.navLink::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #4f8ef7;
-  transition: width 0.2s;
-}
-
 .navLink:hover {
-  color: #4f8ef7;
-}
-
-.navLink:hover::after {
-  width: 100%;
+  color: #ffffff;
 }
 
 .burger {
@@ -78,7 +59,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: #e0e0e0;
+  background: #ffffff;
   transition: 0.3s;
 }
 
@@ -93,7 +74,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: #1a1a2e;
+    background: #3d5af1;
     flex-direction: column;
     padding: 1.5rem 2rem;
     gap: 1.2rem;
