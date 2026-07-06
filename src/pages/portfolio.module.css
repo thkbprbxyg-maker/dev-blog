@@ -1,6 +1,7 @@
 .page {
   background: #3d5af1;
   min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
 }
 
 :global(.navbar) {

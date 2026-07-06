@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Head from '@docusaurus/Head';
 import Header from '@site/src/components/Header';
 import Hero from '@site/src/components/Hero';
 import MySkills from '@site/src/components/MySkills';
@@ -14,6 +15,9 @@ export default function Portfolio(): JSX.Element {
       description="Junior DevSecOps Engineer – Portfolio of Ibrahim Onat"
       noFooter
     >
+      <Head>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+      </Head>
       <div className={styles.page}>
         <Header />
         <Hero />

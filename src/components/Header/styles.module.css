@@ -5,12 +5,15 @@
   right: 0;
   z-index: 100;
   background: #3d5af1;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.scrolled {
-  background: #3d5af1;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+.visible {
+  transform: translateY(0);
+}
+
+.hidden {
+  transform: translateY(-100%);
 }
 
 .inner {
@@ -19,11 +22,7 @@
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  display: none;
+  justify-content: flex-end;
 }
 
 .nav {
@@ -36,6 +35,8 @@
   border: none;
   color: rgba(255, 255, 255, 0.9);
   font-size: 0.9rem;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
   cursor: pointer;
   padding: 0.25rem 0;
   transition: color 0.2s;
