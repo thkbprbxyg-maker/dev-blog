@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  background: #3d5af1;
+  background: #266AD9;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -79,7 +79,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: #3d5af1;
+    background: #266AD9;
     flex-direction: column;
     padding: 1.5rem 2rem;
     gap: 1.2rem;
