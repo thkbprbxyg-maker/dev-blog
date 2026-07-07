@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styles from './styles.module.css';
+import { IconShellScripting, IconDocker, IconPython, IconYaml, IconGithubActions, IconITSecurity } from './icons';
 
 const skills = [
   {
@@ -9,7 +10,7 @@ const skills = [
   },
   {
     name: 'Docker',
-    icon: '🐳',
+    icon: <IconDocker />,
     description: 'Containerized full-stack applications using custom Dockerfiles and docker-compose, including WordPress, Conduit and a Minecraft server.',
   },
   {
@@ -19,27 +20,27 @@ const skills = [
   },
   {
     name: 'Python',
-    icon: '🐍',
+    icon: <IconPython />,
     description: 'Built security tools for XSS scanning, dictionary attacks and mask attacks. Also worked with Python REST APIs and backend services.',
   },
   {
     name: 'Bash Scripting',
-    icon: '💻',
+    icon: <IconShellScripting />,
     description: 'Wrote shell scripts for server automation, deployment pipelines and security tasks in Kali Linux environments.',
   },
   {
     name: 'YAML',
-    icon: '📄',
+    icon: <IconYaml />,
     description: 'Wrote GitHub Actions workflows for CI/CD pipelines and docker-compose files for multi-container application setups.',
   },
   {
     name: 'GitHub Actions',
-    icon: '⚙️',
+    icon: <IconGithubActions />,
     description: 'Built CI/CD pipelines for automated testing, building and deploying Docusaurus to GitHub Pages on every push.',
   },
   {
     name: 'IT Security',
-    icon: '🔐',
+    icon: <IconITSecurity />,
     description: 'Performed XSS attacks, hash cracking with Hashcat, KeePass CVE exploitation, ZIP/Office document cracking and SQL injection on OWASP Juice Shop.',
   },
   {
