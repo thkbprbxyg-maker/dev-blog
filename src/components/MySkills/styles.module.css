@@ -9,10 +9,18 @@
 }
 
 .heading {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 2.5rem;
+}
+
+.desktopOnly {
+  display: grid;
+}
+
+.mobileOnly {
+  display: none;
 }
 
 .grid {
@@ -69,32 +77,113 @@
 }
 
 .icon {
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 
 .name {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: #c9d1d9;
   font-weight: 500;
   text-align: center;
 }
 
 .backTitle {
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .backDesc {
-  font-size: 0.78rem;
+  font-size: 0.92rem;
   color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
   margin: 0;
 }
 
 @media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+  .desktopOnly {
+    display: none;
+  }
+
+  .mobileOnly {
+    display: block;
+  }
+
+  .track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
+  }
+
+  .track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .page {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding-right: 0.5rem;
+  }
+
+  .mobileSkill {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: #252b4a;
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+  }
+
+  .mobileIcon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+  }
+
+  .mobileName {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 0.3rem;
+  }
+
+  .mobileDesc {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .dot:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .dotActive {
+    background: #ffffff;
+    transform: scale(1.2);
   }
 }

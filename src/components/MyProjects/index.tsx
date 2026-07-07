@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import styles from './styles.module.css';
 
+const PROJECTS_OVERVIEW_URL = 'https://thkbprbxyg-maker.github.io/dev-blog/docs/projects/overview';
+
+// Best 3 projects chosen for the highlights: infra/security, backend API and containerization
+// — the strongest match for Junior DevSecOps / Cloud Security roles.
 const projects = [
   {
     id: 1,
@@ -9,16 +13,16 @@ const projects = [
       'Set up and configured a Linux VPS from scratch — including SSH hardening, firewall rules, Nginx reverse proxy and automated deployments via GitHub Actions.',
     tags: ['Linux', 'Nginx', 'SSH', 'GitHub Actions'],
     github: 'https://github.com/thkbprbxyg-maker/v-server-setup',
-    docs: 'https://thkbprbxyg-maker.github.io/dev-blog/docs/projects/overview',
+    docs: PROJECTS_OVERVIEW_URL,
   },
   {
     id: 2,
-    name: 'Minecraft Server',
+    name: 'Truck Signs API',
     description:
-      'Minecraft Java Edition server running in Docker using a custom Dockerfile and docker-compose setup with persistent world data and automated backups.',
-    tags: ['Docker', 'docker-compose', 'Linux'],
-    github: 'https://github.com/thkbprbxyg-maker/minecraft-server',
-    docs: 'https://thkbprbxyg-maker.github.io/dev-blog/docs/projects/overview',
+      'Python-based REST API for managing truck sign orders. Includes authentication, order management and a clean RESTful design following best practices.',
+    tags: ['Python', 'REST API', 'Backend'],
+    github: 'https://github.com/thkbprbxyg-maker/truck_signs_api',
+    docs: PROJECTS_OVERVIEW_URL,
   },
   {
     id: 3,
@@ -27,25 +31,7 @@ const projects = [
       'Containerized the RealWorld Conduit full-stack application using Docker Compose, connecting a Dockerized frontend with a Dockerized Python/Flask backend.',
     tags: ['Docker', 'Python', 'TypeScript', 'docker-compose'],
     github: 'https://github.com/thkbprbxyg-maker/conduit-container',
-    docs: 'https://thkbprbxyg-maker.github.io/dev-blog/docs/projects/overview',
-  },
-  {
-    id: 4,
-    name: 'Truck Signs API',
-    description:
-      'Python-based REST API for managing truck sign orders. Includes authentication, order management and a clean RESTful design following best practices.',
-    tags: ['Python', 'REST API', 'Backend'],
-    github: 'https://github.com/thkbprbxyg-maker/truck_signs_api',
-    docs: 'https://thkbprbxyg-maker.github.io/dev-blog/docs/projects/overview',
-  },
-  {
-    id: 5,
-    name: 'WordPress on Docker',
-    description:
-      'Deployed a fully functional WordPress instance using Docker Compose with a MySQL database, persistent volumes and Nginx as a reverse proxy.',
-    tags: ['Docker', 'WordPress', 'MySQL', 'Nginx'],
-    github: 'https://github.com/thkbprbxyg-maker/wordpress-compose-review',
-    docs: 'https://thkbprbxyg-maker.github.io/dev-blog/docs/projects/overview',
+    docs: PROJECTS_OVERVIEW_URL,
   },
 ];
 
@@ -56,7 +42,9 @@ const MyProjects: React.FC = () => {
     <section id="my-projects" className={styles.section}>
       <div className={styles.inner}>
         <h2 className={styles.heading}>My project highlights</h2>
-        <div className={styles.layout}>
+
+        {/* Desktop: numbered list + single active feature card */}
+        <div className={`${styles.layout} ${styles.desktopOnly}`}>
           <ul className={styles.list}>
             {projects.map((p, i) => (
               <li
@@ -68,7 +56,7 @@ const MyProjects: React.FC = () => {
               </li>
             ))}
             <li className={styles.seeMore}>
-              <a href="https://github.com/thkbprbxyg-maker" target="_blank" rel="noreferrer">
+              <a href={PROJECTS_OVERVIEW_URL} target="_blank" rel="noreferrer">
                 ↗ see more projects
               </a>
             </li>
@@ -93,6 +81,32 @@ const MyProjects: React.FC = () => {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Mobile: all 3 projects as full stacked cards */}
+        <div className={styles.mobileOnly}>
+          {projects.map((p, i) => (
+            <div key={p.id} className={styles.mobileCard}>
+              <h3 className={styles.mobileCardTitle}>{i + 1}. {p.name}</h3>
+              <div className={styles.tags}>
+                {p.tags.map((t) => (
+                  <span key={t} className={styles.tag}>{t}</span>
+                ))}
+              </div>
+              <p className={styles.cardDesc}>{p.description}</p>
+              <div className={styles.cardActions}>
+                <a href={p.docs} target="_blank" rel="noreferrer" className={styles.btnDocs}>
+                  Documentation
+                </a>
+                <a href={p.github} target="_blank" rel="noreferrer" className={styles.btnGithub}>
+                  GitHub
+                </a>
+              </div>
+            </div>
+          ))}
+          <a href={PROJECTS_OVERVIEW_URL} target="_blank" rel="noreferrer" className={styles.seeMoreMobile}>
+            ↗ see more projects
+          </a>
         </div>
       </div>
     </section>

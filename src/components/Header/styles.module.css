@@ -22,7 +22,7 @@
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .nav {
@@ -65,6 +65,10 @@
 }
 
 @media (max-width: 768px) {
+  .inner {
+    justify-content: flex-end;
+  }
+
   .burger {
     display: flex;
   }

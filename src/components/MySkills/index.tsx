@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styles from './styles.module.css';
 
 const skills = [
@@ -64,12 +64,42 @@ const skills = [
   },
 ];
 
+// Group skills into pages of 3 for the mobile swipe-slider
+const PAGE_SIZE = 3;
+const pages: (typeof skills)[] = [];
+for (let i = 0; i < skills.length; i += PAGE_SIZE) {
+  pages.push(skills.slice(i, i + PAGE_SIZE));
+}
+
 const MySkills: React.FC = () => {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activePage, setActivePage] = useState(0);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const handleScroll = () => {
+      const pageWidth = track.clientWidth;
+      const index = Math.round(track.scrollLeft / pageWidth);
+      setActivePage(index);
+    };
+    track.addEventListener('scroll', handleScroll, { passive: true });
+    return () => track.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const goToPage = (index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    track.scrollTo({ left: index * track.clientWidth, behavior: 'smooth' });
+  };
+
   return (
     <section id="my-skills" className={styles.section}>
       <div className={styles.inner}>
         <h2 className={styles.heading}>My skills</h2>
-        <div className={styles.grid}>
+
+        {/* Desktop: full flip-card grid */}
+        <div className={`${styles.grid} ${styles.desktopOnly}`}>
           {skills.map((skill) => (
             <div key={skill.name} className={styles.flipCard}>
               <div className={styles.flipInner}>
@@ -84,6 +114,35 @@ const MySkills: React.FC = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Mobile: swipeable slider, 3 skills per page */}
+        <div className={styles.mobileOnly}>
+          <div className={styles.track} ref={trackRef}>
+            {pages.map((page, pageIndex) => (
+              <div className={styles.page} key={pageIndex}>
+                {page.map((skill) => (
+                  <div key={skill.name} className={styles.mobileSkill}>
+                    <span className={styles.mobileIcon}>{skill.icon}</span>
+                    <div>
+                      <p className={styles.mobileName}>{skill.name}</p>
+                      <p className={styles.mobileDesc}>{skill.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div className={styles.dots}>
+            {pages.map((_, i) => (
+              <button
+                key={i}
+                className={`${styles.dot} ${i === activePage ? styles.dotActive : ''}`}
+                onClick={() => goToPage(i)}
+                aria-label={`Go to skills page ${i + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -22,6 +22,14 @@
   align-items: start;
 }
 
+.desktopOnly {
+  display: grid;
+}
+
+.mobileOnly {
+  display: none;
+}
+
 .list {
   list-style: none;
   padding: 0;
@@ -91,7 +99,7 @@
 }
 
 .cardTitle {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: #ffffff;
   margin: 0;
@@ -106,15 +114,15 @@
 .tag {
   background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
-  font-size: 0.78rem;
-  padding: 0.25rem 0.6rem;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.7rem;
   border-radius: 20px;
 }
 
 .cardDesc {
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.7;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   margin: 0;
 }
 
@@ -153,22 +161,43 @@
 }
 
 @media (max-width: 768px) {
-  .layout {
-    grid-template-columns: 1fr;
+  .desktopOnly {
+    display: none;
   }
 
-  .list {
-    flex-direction: row;
-    flex-wrap: wrap;
+  .mobileOnly {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
-  .listItem {
-    border-left: none;
-    border-bottom: 3px solid transparent;
+  .mobileCard {
+    background: #1e2d6b;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
-  .listItemActive {
-    border-left: none;
-    border-bottom-color: #ffffff;
+  .mobileCardTitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+  }
+
+  .seeMoreMobile {
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.6rem 0;
+  }
+
+  .seeMoreMobile:hover {
+    text-decoration: underline;
   }
 }

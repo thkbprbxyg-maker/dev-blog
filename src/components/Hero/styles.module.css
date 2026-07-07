@@ -21,14 +21,14 @@
 }
 
 .greeting {
-  font-size: 1rem;
+  font-size: 1.15rem;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 0.5rem;
   font-family: 'Quicksand', sans-serif;
 }
 
 .name {
-  font-size: 3.2rem;
+  font-size: 4.2rem;
   font-weight: 800;
   color: #ffffff;
   margin: 0 0 0.4rem;
@@ -37,7 +37,7 @@
 }
 
 .title {
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: rgba(255, 255, 255, 0.85);
   font-weight: 400;
   margin-bottom: 1.5rem;
@@ -45,10 +45,10 @@
 }
 
 .bio {
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: rgba(255, 255, 255, 0.8);
   line-height: 1.8;
-  max-width: 520px;
+  max-width: 560px;
   margin-bottom: 2rem;
   font-family: 'Quicksand', sans-serif;
 }
@@ -76,8 +76,8 @@
 }
 
 .photo {
-  width: 200px;
-  height: 250px;
+  width: 340px;
+  height: 400px;
   object-fit: cover;
   object-position: center top;
   border-radius: 12px;
@@ -85,18 +85,36 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    padding: 6rem 1.5rem 3rem;
+  }
+
   .inner {
     flex-direction: column-reverse;
     text-align: center;
+    align-items: center;
   }
 
   .name {
-    font-size: 2.2rem;
+    font-size: 2.6rem;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .imageWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .photo {
-    width: 200px;
-    height: 250px;
+    width: min(240px, 65%);
+    height: auto;
+    aspect-ratio: 13 / 16;
   }
 
   .bio {
