@@ -113,11 +113,32 @@
 }
 
 .tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   background: rgba(255, 255, 255, 0.15);
   color: #ffffff;
   font-size: 14px;
   padding: 0.3rem 0.7rem;
   border-radius: 20px;
+}
+
+.tag svg {
+  flex-shrink: 0;
+}
+
+.graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.graphic img {
+  max-width: 180px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .cardDesc {
@@ -201,5 +222,9 @@
 
   .seeMoreMobile:hover {
     text-decoration: underline;
+  }
+
+  .cardActions {
+    flex-wrap: wrap;
   }
 }
