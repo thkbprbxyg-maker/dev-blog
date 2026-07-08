@@ -166,6 +166,7 @@ export const TAG_ICONS: Record<string, React.FC> = {
   Docker: TagIconDocker,
   TypeScript: TagIconTypeScript,
   'docker-compose': TagIconLayers,
+  Container: TagIconLayers,
   Django: TagIconBackend,
   YAML: TagIconYaml,
   'Shell Scripting': TagIconShell,
