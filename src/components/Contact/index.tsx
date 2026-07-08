@@ -18,6 +18,9 @@ const Contact: React.FC = () => {
             <li>You want to know how I can contribute to your team.</li>
             <li>Remote work or relocating within Germany works for you too.</li>
           </ul>
+        </div>
+        <div className={styles.right}>
+          <p className={styles.tagline}>Looking forward to hearing from you!</p>
           <div className={styles.links}>
             <a href="mailto:ibrahimonat3@gmail.com" className={styles.link}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,9 +36,6 @@ const Contact: React.FC = () => {
               Profile Page
             </a>
           </div>
-        </div>
-        <div className={styles.right}>
-          <p className={styles.tagline}>Looking forward to hearing from you!</p>
         </div>
       </div>
 
