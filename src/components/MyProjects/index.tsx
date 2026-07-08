@@ -81,12 +81,14 @@ const MyProjects: React.FC = () => {
                 })}
               </div>
             </div>
-            {active.image && (
-              <div className={styles.graphic}>
-                <img src={active.image} alt={active.name} />
-              </div>
-            )}
-            <p className={styles.cardDesc}>{active.description}</p>
+            <div className={styles.cardBody}>
+              {active.image && (
+                <div className={styles.graphic}>
+                  <img src={active.image} alt={active.name} />
+                </div>
+              )}
+              <p className={styles.cardDesc}>{active.description}</p>
+            </div>
             <div className={styles.cardActions}>
               <a href={active.docs} target="_blank" rel="noreferrer" className={styles.btnDocs}>
                 Documentation
