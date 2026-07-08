@@ -2,45 +2,68 @@ import React, { useState } from 'react';
 import styles from './styles.module.css';
 import { TAG_ICONS } from './icons';
 
-const PROJECTS_OVERVIEW_URL = 'https://thkbprbxyg-maker.github.io/dev-blog/docs/projects/overview';
+const DOCS_BASE = 'https://thkbprbxyg-maker.github.io/dev-blog/docs/projects';
+const PROJECTS_OVERVIEW_URL = `${DOCS_BASE}/overview`;
 
-// Best 3 projects chosen for the highlights: infra/security, backend API and containerization
-// — the strongest match for Junior DevSecOps / Cloud Security roles.
+// Matches the 5 entries shown in the Figma "My project highlights" frame,
+// in the same order, with Minecraft selected by default (as in the mockup).
 const projects = [
   {
     id: 1,
-    name: 'V-Server Setup',
+    name: 'Baby Tools Shop',
     description:
-      'Set up and configured a Linux VPS from scratch — including SSH hardening, firewall rules, Nginx reverse proxy and automated deployments via GitHub Actions.',
-    tags: ['Linux', 'Nginx', 'SSH', 'GitHub Actions'],
-    github: 'https://github.com/thkbprbxyg-maker/v-server-setup',
-    docs: PROJECTS_OVERVIEW_URL,
-    image: '/dev-blog/img/projects/v-server-setup.png',
+      'Simple e-commerce demo app built with Django, including user authentication, product/category management and an admin interface. Fully containerized with Docker for a reproducible setup.',
+    tags: ['Python', 'Docker', 'Backend'],
+    github: 'https://github.com/thkbprbxyg-maker/baby-tools-shop',
+    docs: `${DOCS_BASE}/baby-tools-shop`,
+    image: '/dev-blog/img/projects/baby-tools-shop.png',
   },
   {
     id: 2,
     name: 'Truck Signs API',
     description:
       'Python-based REST API for managing truck sign orders. Includes authentication, order management and a clean RESTful design following best practices.',
-    tags: ['Python', 'REST API', 'Backend'],
+    tags: ['Python', 'REST API', 'Backend', 'Docker'],
     github: 'https://github.com/thkbprbxyg-maker/truck_signs_api',
-    docs: PROJECTS_OVERVIEW_URL,
+    docs: `${DOCS_BASE}/truck-signs-api`,
     image: '/dev-blog/img/projects/truck-signs-api.png',
   },
   {
     id: 3,
-    name: 'Conduit Container',
+    name: 'Juice Shop Meister',
     description:
-      'Containerized the RealWorld Conduit full-stack application using Docker Compose, connecting a Dockerized frontend with a Dockerized Python/Flask backend.',
-    tags: ['Docker', 'Python', 'TypeScript', 'docker-compose'],
-    github: 'https://github.com/thkbprbxyg-maker/conduit-container',
-    docs: PROJECTS_OVERVIEW_URL,
-    image: '/dev-blog/img/projects/conduit-container.png',
+      'Documents my solutions to hacking challenges in the OWASP Juice Shop — including XSS attacks, hash cracking and SQL injection. Purely for educational purposes.',
+    tags: ['IT Security'],
+    github: null,
+    docs: `${DOCS_BASE}/juice-shop-master`,
+    image: '/dev-blog/img/projects/juice-shop-master.png',
+  },
+  {
+    id: 4,
+    name: 'Minecraft',
+    description:
+      'Minecraft Java Edition server running in Docker using a custom Dockerfile and docker-compose setup with persistent world data — no prebuilt image, the server JAR is downloaded at build time.',
+    tags: ['YAML', 'Shell Scripting', 'IT Security', 'Container'],
+    github: 'https://github.com/thkbprbxyg-maker/minecraft-server',
+    docs: `${DOCS_BASE}/minecraft-server`,
+    image: '/dev-blog/img/projects/minecraft-server.png',
+  },
+  {
+    id: 5,
+    name: 'WordPress hosten',
+    description:
+      'Minimal Docker Compose setup running WordPress with a MariaDB database — simple, reproducible and secure, with no passwords or tokens stored in the repository.',
+    tags: ['Docker', 'Container', 'Backend'],
+    github: 'https://github.com/thkbprbxyg-maker/wordpress-compose-review',
+    docs: `${DOCS_BASE}/wordpress`,
+    image: '/dev-blog/img/projects/wordpress.png',
   },
 ];
 
+const DEFAULT_ACTIVE = projects.find((p) => p.name === 'Minecraft') ?? projects[0];
+
 const MyProjects: React.FC = () => {
-  const [active, setActive] = useState(projects[0]);
+  const [active, setActive] = useState(DEFAULT_ACTIVE);
 
   return (
     <section id="my-projects" className={styles.section}>
@@ -93,14 +116,16 @@ const MyProjects: React.FC = () => {
               <a href={active.docs} target="_blank" rel="noreferrer" className={styles.btnDocs}>
                 Documentation
               </a>
-              <a href={active.github} target="_blank" rel="noreferrer" className={styles.btnGithub}>
-                GitHub
-              </a>
+              {active.github && (
+                <a href={active.github} target="_blank" rel="noreferrer" className={styles.btnGithub}>
+                  GitHub
+                </a>
+              )}
             </div>
           </div>
         </div>
 
-        {/* Mobile: all 3 projects as full stacked cards */}
+        {/* Mobile: all projects as full stacked cards */}
         <div className={styles.mobileOnly}>
           {projects.map((p, i) => (
             <div key={p.id} className={styles.mobileCard}>
@@ -126,9 +151,11 @@ const MyProjects: React.FC = () => {
                 <a href={p.docs} target="_blank" rel="noreferrer" className={styles.btnDocs}>
                   Documentation
                 </a>
-                <a href={p.github} target="_blank" rel="noreferrer" className={styles.btnGithub}>
-                  GitHub
-                </a>
+                {p.github && (
+                  <a href={p.github} target="_blank" rel="noreferrer" className={styles.btnGithub}>
+                    GitHub
+                  </a>
+                )}
               </div>
             </div>
           ))}

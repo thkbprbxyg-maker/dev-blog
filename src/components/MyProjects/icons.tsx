@@ -106,6 +106,55 @@ export const TagIconLayers: React.FC = () => (
   </svg>
 );
 
+// --- Added to cover the projects list from the Figma "My project highlights" frame ---
+
+export const TagIconYaml: React.FC = () => (
+  <svg {...base}>
+    <path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="#f5f5f5" />
+    <path d="M15 3v4a1 1 0 0 0 1 1h4" fill="none" stroke="#1a1f2e" strokeWidth="1.2" />
+    <rect x="7.5" y="12" width="9" height="1.6" rx="0.8" fill="#1a1f2e" />
+    <rect x="7.5" y="15.4" width="9" height="1.6" rx="0.8" fill="#1a1f2e" />
+    <rect x="7.5" y="18.8" width="6" height="1.6" rx="0.8" fill="#1a1f2e" />
+  </svg>
+);
+
+export const TagIconShell: React.FC = () => (
+  <svg {...base}>
+    <rect x="2" y="4" width="20" height="16" rx="2.5" fill="none" stroke="#f5f5f5" strokeWidth="2" />
+    <path d="M6 9l4 3-4 3" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M13 15h5" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+export const TagIconShield: React.FC = () => (
+  <svg {...base}>
+    <path
+      d="M12 2.5l7.5 3v6c0 5.2-3.2 9-7.5 10.5-4.3-1.5-7.5-5.3-7.5-10.5v-6l7.5-3z"
+      fill="#f5f5f5"
+    />
+    <path
+      d="M8.5 12.2l2.3 2.3 4.7-5"
+      fill="none"
+      stroke="#1a1f2e"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const TagIconContainer: React.FC = () => (
+  <svg {...base} viewBox="0 0 40 40">
+    <g fill="#2496ED">
+      <rect x="10" y="18" width="6" height="6" rx="1" />
+      <rect x="17.5" y="18" width="6" height="6" rx="1" />
+      <rect x="25" y="18" width="6" height="6" rx="1" />
+      <rect x="17.5" y="10.5" width="6" height="6" rx="1" />
+      <path d="M6 25c0-1.5 1.5-2.5 1.5-2.5h27s4 0 5.5-3c0 0 2 4.5-1.5 7.5-3 2.5-7 2.5-7 2.5H14s-8-.5-8-4.5z" />
+    </g>
+  </svg>
+);
+
 export const TAG_ICONS: Record<string, React.FC> = {
   Linux: TagIconLinux,
   Nginx: TagIconServer,
@@ -117,4 +166,9 @@ export const TAG_ICONS: Record<string, React.FC> = {
   Docker: TagIconDocker,
   TypeScript: TagIconTypeScript,
   'docker-compose': TagIconLayers,
+  Django: TagIconBackend,
+  YAML: TagIconYaml,
+  'Shell Scripting': TagIconShell,
+  'IT Security': TagIconShield,
+  Container: TagIconContainer,
 };
