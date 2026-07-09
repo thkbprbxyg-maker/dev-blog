@@ -110,17 +110,19 @@ const MyProjects: React.FC = () => {
                   <img src={active.image} alt={active.name} />
                 </div>
               )}
-              <p className={styles.cardDesc}>{active.description}</p>
-            </div>
-            <div className={styles.cardActions}>
-              <a href={active.docs} target="_blank" rel="noreferrer" className={styles.btnDocs}>
-                Documentation
-              </a>
-              {active.github && (
-                <a href={active.github} target="_blank" rel="noreferrer" className={styles.btnGithub}>
-                  GitHub
-                </a>
-              )}
+              <div className={styles.cardContent}>
+                <p className={styles.cardDesc}>{active.description}</p>
+                <div className={styles.cardActions}>
+                  <a href={active.docs} target="_blank" rel="noreferrer" className={styles.btnDocs}>
+                    Documentation
+                  </a>
+                  {active.github && (
+                    <a href={active.github} target="_blank" rel="noreferrer" className={styles.btnGithub}>
+                      GitHub
+                    </a>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
         </div>
