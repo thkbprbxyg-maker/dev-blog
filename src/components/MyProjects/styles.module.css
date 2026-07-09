@@ -9,7 +9,7 @@
 }
 
 .heading {
-  font-size: 40px;
+  font-size: 64px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0;
@@ -56,9 +56,9 @@
 }
 
 .listItemActive {
-  background: #262E34;
+  background: transparent;
   color: #ffffff;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .listNum {
@@ -83,9 +83,9 @@
 }
 
 .card {
-  background: #262E34;
+  background: #2F4563;
   border: none;
-  border-radius: 12px;
+  border-radius: 30px;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -94,12 +94,15 @@
 
 .cardHeader {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   gap: 0.8rem;
 }
 
 .cardTitle {
-  font-size: 24px;
+  font-size: 40px;
   line-height: 1.2;
   font-weight: 700;
   color: #ffffff;
@@ -116,9 +119,10 @@
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  background: #ffffff;
+  color: #1a1f2e;
   font-size: 14px;
+  font-weight: 600;
   padding: 0.3rem 0.7rem;
   border-radius: 20px;
 }
@@ -129,7 +133,7 @@
 
 .cardBody {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 1.5rem;
 }
 
@@ -173,8 +177,8 @@
 }
 
 .btnDocs {
-  background: #ffffff;
-  color: #266AD9;
+  background: #266AD9;
+  color: #ffffff;
 }
 
 .btnGithub {
@@ -191,6 +195,10 @@
 }
 
 @media (max-width: 768px) {
+  .heading {
+    font-size: 48px;
+  }
+
   .graphic img {
     width: 60%;
     max-width: 220px;
@@ -207,9 +215,9 @@
   }
 
   .mobileCard {
-    background: #262E34;
-    border-radius: 12px;
-    padding: 1.5rem;
+    background: #2F4563;
+    border-radius: 30px;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -221,6 +229,14 @@
     font-weight: 700;
     color: #ffffff;
     margin: 0;
+  }
+
+  .mobileMoreIntro {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0.5rem 0 0;
   }
 
   .seeMoreMobile {

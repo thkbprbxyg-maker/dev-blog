@@ -33,8 +33,8 @@
 .navLink {
   background: none;
   border: none;
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 0.9rem;
+  color: #ffffff;
+  font-size: 24px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
   cursor: pointer;
@@ -49,7 +49,11 @@
 .burger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  width: 30px;
+  height: 32px;
   background: none;
   border: none;
   cursor: pointer;
@@ -58,10 +62,22 @@
 
 .burger span {
   display: block;
-  width: 24px;
+  width: 30px;
   height: 2px;
   background: #ffffff;
   transition: 0.3s;
+}
+
+.mobileOverlay {
+  display: none;
+}
+
+.mobileClose {
+  display: none;
+}
+
+.mobileNav {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -75,17 +91,59 @@
 
   .nav {
     display: none;
+  }
+
+  .mobileOverlay {
+    display: block;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: #266AD9;
-    flex-direction: column;
-    padding: 1.5rem 2rem;
-    gap: 1.2rem;
+    background: #ffffff;
+    padding: 2.5rem 2rem;
+    transform: translateY(-16px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  .nav.open {
+  .mobileOverlayOpen {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .mobileClose {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 32px;
+    height: 32px;
+    background: none;
+    border: none;
+    color: #266AD9;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .mobileNavLink {
+    background: none;
+    border: none;
+    color: #266AD9;
+    font-size: 24px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
   }
 }

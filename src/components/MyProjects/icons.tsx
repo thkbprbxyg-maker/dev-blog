@@ -12,8 +12,8 @@ const base = {
 
 export const TagIconLinux: React.FC = () => (
   <svg {...base}>
-    <circle cx="12" cy="9" r="6" fill="#f5f5f5" />
-    <path d="M8 21c0-3 1.5-6 4-6s4 3 4 6" fill="#f5f5f5" />
+    <circle cx="12" cy="9" r="6" fill="#266AD9" />
+    <path d="M8 21c0-3 1.5-6 4-6s4 3 4 6" fill="#266AD9" />
     <circle cx="9.5" cy="8" r="1" fill="#1a1f2e" />
     <circle cx="14.5" cy="8" r="1" fill="#1a1f2e" />
   </svg>
@@ -21,8 +21,8 @@ export const TagIconLinux: React.FC = () => (
 
 export const TagIconServer: React.FC = () => (
   <svg {...base}>
-    <rect x="3" y="4" width="18" height="6" rx="1.5" fill="#f5f5f5" />
-    <rect x="3" y="14" width="18" height="6" rx="1.5" fill="#f5f5f5" />
+    <rect x="3" y="4" width="18" height="6" rx="1.5" fill="#266AD9" />
+    <rect x="3" y="14" width="18" height="6" rx="1.5" fill="#266AD9" />
     <circle cx="7" cy="7" r="1" fill="#1a1f2e" />
     <circle cx="7" cy="17" r="1" fill="#1a1f2e" />
   </svg>
@@ -30,17 +30,17 @@ export const TagIconServer: React.FC = () => (
 
 export const TagIconKey: React.FC = () => (
   <svg {...base}>
-    <circle cx="8" cy="15" r="4" fill="none" stroke="#f5f5f5" strokeWidth="2" />
-    <path d="M11 12l9-9M17 6l2 2M14 9l2 2" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" />
+    <circle cx="8" cy="15" r="4" fill="none" stroke="#266AD9" strokeWidth="2" />
+    <path d="M11 12l9-9M17 6l2 2M14 9l2 2" stroke="#266AD9" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
 export const TagIconGear: React.FC = () => (
   <svg {...base}>
-    <circle cx="12" cy="12" r="3.5" fill="none" stroke="#f5f5f5" strokeWidth="2" />
+    <circle cx="12" cy="12" r="3.5" fill="none" stroke="#266AD9" strokeWidth="2" />
     <path
       d="M12 4v3M12 17v3M20 12h-3M7 12H4M17.3 6.7l-2 2M8.7 15.3l-2 2M17.3 17.3l-2-2M8.7 8.7l-2-2"
-      stroke="#f5f5f5"
+      stroke="#266AD9"
       strokeWidth="2"
       strokeLinecap="round"
     />
@@ -64,16 +64,16 @@ export const TagIconPython: React.FC = () => (
 
 export const TagIconAPI: React.FC = () => (
   <svg {...base}>
-    <path d="M4 9l4-4 4 4M8 5v10" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M20 15l-4 4-4-4M16 19V9" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M4 9l4-4 4 4M8 5v10" stroke="#266AD9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M20 15l-4 4-4-4M16 19V9" stroke="#266AD9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </svg>
 );
 
 export const TagIconBackend: React.FC = () => (
   <svg {...base}>
-    <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#f5f5f5" strokeWidth="2" />
-    <path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6" fill="none" stroke="#f5f5f5" strokeWidth="2" />
-    <path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" fill="none" stroke="#f5f5f5" strokeWidth="2" />
+    <ellipse cx="12" cy="6" rx="8" ry="3" fill="none" stroke="#266AD9" strokeWidth="2" />
+    <path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6" fill="none" stroke="#266AD9" strokeWidth="2" />
+    <path d="M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" fill="none" stroke="#266AD9" strokeWidth="2" />
   </svg>
 );
 
@@ -100,9 +100,9 @@ export const TagIconTypeScript: React.FC = () => (
 
 export const TagIconLayers: React.FC = () => (
   <svg {...base}>
-    <path d="M12 3l9 5-9 5-9-5 9-5z" fill="#f5f5f5" />
-    <path d="M3 13l9 5 9-5" fill="none" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M3 18l9 5 9-5" fill="none" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M12 3l9 5-9 5-9-5 9-5z" fill="#266AD9" />
+    <path d="M3 13l9 5 9-5" fill="none" stroke="#266AD9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M3 18l9 5 9-5" fill="none" stroke="#266AD9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 
@@ -110,7 +110,7 @@ export const TagIconLayers: React.FC = () => (
 
 export const TagIconYaml: React.FC = () => (
   <svg {...base}>
-    <path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="#f5f5f5" />
+    <path d="M6 3h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" fill="#266AD9" />
     <path d="M15 3v4a1 1 0 0 0 1 1h4" fill="none" stroke="#1a1f2e" strokeWidth="1.2" />
     <rect x="7.5" y="12" width="9" height="1.6" rx="0.8" fill="#1a1f2e" />
     <rect x="7.5" y="15.4" width="9" height="1.6" rx="0.8" fill="#1a1f2e" />
@@ -120,9 +120,9 @@ export const TagIconYaml: React.FC = () => (
 
 export const TagIconShell: React.FC = () => (
   <svg {...base}>
-    <rect x="2" y="4" width="20" height="16" rx="2.5" fill="none" stroke="#f5f5f5" strokeWidth="2" />
-    <path d="M6 9l4 3-4 3" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-    <path d="M13 15h5" stroke="#f5f5f5" strokeWidth="2" strokeLinecap="round" />
+    <rect x="2" y="4" width="20" height="16" rx="2.5" fill="none" stroke="#266AD9" strokeWidth="2" />
+    <path d="M6 9l4 3-4 3" stroke="#266AD9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <path d="M13 15h5" stroke="#266AD9" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
@@ -130,7 +130,7 @@ export const TagIconShield: React.FC = () => (
   <svg {...base}>
     <path
       d="M12 2.5l7.5 3v6c0 5.2-3.2 9-7.5 10.5-4.3-1.5-7.5-5.3-7.5-10.5v-6l7.5-3z"
-      fill="#f5f5f5"
+      fill="#266AD9"
     />
     <path
       d="M8.5 12.2l2.3 2.3 4.7-5"
@@ -166,7 +166,6 @@ export const TAG_ICONS: Record<string, React.FC> = {
   Docker: TagIconDocker,
   TypeScript: TagIconTypeScript,
   'docker-compose': TagIconLayers,
-  Container: TagIconLayers,
   Django: TagIconBackend,
   YAML: TagIconYaml,
   'Shell Scripting': TagIconShell,

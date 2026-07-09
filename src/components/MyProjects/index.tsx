@@ -125,11 +125,11 @@ const MyProjects: React.FC = () => {
           </div>
         </div>
 
-        {/* Mobile: all projects as full stacked cards */}
+        {/* Mobile: top 3 highlighted projects as full stacked cards, matching Figma */}
         <div className={styles.mobileOnly}>
-          {projects.map((p, i) => (
+          {projects.slice(0, 3).map((p, i) => (
             <div key={p.id} className={styles.mobileCard}>
-              <h3 className={styles.mobileCardTitle}>{i + 1}. {p.name}</h3>
+              <h3 className={styles.mobileCardTitle}>{i + 1}.{p.name}</h3>
               <div className={styles.tags}>
                 {p.tags.map((t) => {
                   const TagIcon = TAG_ICONS[t];
@@ -159,6 +159,9 @@ const MyProjects: React.FC = () => {
               </div>
             </div>
           ))}
+          <p className={styles.mobileMoreIntro}>
+            Write some information about your other projects. What other projects have you been working on so far?
+          </p>
           <a href={PROJECTS_OVERVIEW_URL} target="_blank" rel="noreferrer" className={styles.seeMoreMobile}>
             ↗ see more projects
           </a>

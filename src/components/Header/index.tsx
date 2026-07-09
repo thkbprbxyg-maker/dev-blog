@@ -29,7 +29,7 @@ const Header: React.FC = () => {
   return (
     <header className={`${styles.header} ${visible ? styles.visible : styles.hidden}`}>
       <div className={styles.inner}>
-        <nav className={`${styles.nav} ${menuOpen ? styles.open : ''}`}>
+        <nav className={styles.nav}>
           {['about-me', 'my-skills', 'my-projects', 'contact'].map((id) => (
             <button key={id} className={styles.navLink} onClick={() => scrollTo(id)}>
               {id.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}
@@ -39,6 +39,19 @@ const Header: React.FC = () => {
         <button className={styles.burger} onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
           <span /><span /><span />
         </button>
+      </div>
+
+      <div className={`${styles.mobileOverlay} ${menuOpen ? styles.mobileOverlayOpen : ''}`}>
+        <button className={styles.mobileClose} onClick={() => setMenuOpen(false)} aria-label="Close menu">
+          ✕
+        </button>
+        <nav className={styles.mobileNav}>
+          {['about-me', 'my-skills', 'my-projects', 'contact'].map((id) => (
+            <button key={id} className={styles.mobileNavLink} onClick={() => scrollTo(id)}>
+              {id.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())}
+            </button>
+          ))}
+        </nav>
       </div>
     </header>
   );
