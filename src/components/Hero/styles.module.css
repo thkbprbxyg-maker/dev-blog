@@ -61,9 +61,9 @@
   background: #ffffff;
   color: #266AD9;
   border: none;
-  padding: 0.7rem 2rem;
+  padding: 0.9rem 2.4rem;
   border-radius: 100px;
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   font-weight: 600;
   font-family: 'Quicksand', sans-serif;
   cursor: pointer;
@@ -80,12 +80,32 @@
 }
 
 .photo {
-  width: 440px;
-  height: 480px;
+  width: 520px;
+  height: 560px;
   object-fit: cover;
   object-position: center top;
   border-radius: 30px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1100px) and (min-width: 769px) {
+  .name {
+    font-size: 64px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .bio {
+    font-size: 18px;
+    max-width: 440px;
+  }
+
+  .photo {
+    width: 360px;
+    height: 400px;
+  }
 }
 
 @media (max-width: 768px) {

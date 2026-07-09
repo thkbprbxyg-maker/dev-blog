@@ -32,7 +32,7 @@
 }
 
 .flipCard {
-  height: 200px;
+  height: 230px;
   perspective: 1000px;
   cursor: pointer;
 }
@@ -66,8 +66,8 @@
 .flipFront {
   background: rgba(145, 201, 243, 0.10);
   border: none;
-  padding: 42px 71px;
-  gap: 48px;
+  padding: 34px 60px;
+  gap: 32px;
 }
 
 .flipBack {
@@ -80,14 +80,14 @@
 }
 
 .icon {
-  font-size: 2.3rem;
+  font-size: 3rem;
 }
 
 .name {
-  font-size: 20px;
+  font-size: 26px;
   line-height: 1.2;
   color: #c9d1d9;
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -151,12 +151,12 @@
   }
 
   .mobileIcon {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
     flex-shrink: 0;
   }
 
   .mobileName {
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: #ffffff;
     margin: 0 0 0.3rem;

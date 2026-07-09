@@ -58,6 +58,15 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
+    docs: {
+      sidebar: {
+        // Prevents other top-level sidebar categories (e.g. "Knowledge Base")
+        // from auto-collapsing when navigating into a different one (e.g. "Guides").
+        // That collapse changed the sidebar's height above the click point and
+        // caused the page's scroll position to visibly jump.
+        autoCollapseCategories: false,
+      },
+    },
     navbar: {
       title: 'Ibrahim Onat',
       logo: {
