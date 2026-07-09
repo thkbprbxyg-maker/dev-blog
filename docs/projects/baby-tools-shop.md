@@ -1,3 +1,8 @@
+---
+sidebar_custom_props:
+  image: /img/projects-docs/baby-tools.png
+---
+
 # Baby Tools Shop
 
 ## Description

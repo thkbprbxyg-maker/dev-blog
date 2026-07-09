@@ -1,6 +1,10 @@
+---
+sidebar_position: 2
+---
+
 # GithubLinkAdmonition Component
 
-This `GithubLinkAdmonition` React component renders an Admonition with a GitHub icon, a title, and a link to a specified GitHub resource. The link text and type of Admonition can be customized.
+This `GithubLinkAdmonition` React component renders an Admonition with a GitHub icon, a title, and a link to a specified GitHub resource. The link text and type of Admonition can be customized. It's used throughout the [Projects](/docs/projects/overview) section to link out to each project's repository.
 
 ## Usage
 
@@ -19,7 +23,7 @@ To use the component, provide the required `link` to a GitHub repository or page
 ### Example
 
 ```jsx
-import GithubLinkAdmonition from './GithubLinkAdmonition';
+import GithubLinkAdmonition from '@site/src/components/GithubLinkAdmonition';
 
 const MyComponent = () => {
   return (

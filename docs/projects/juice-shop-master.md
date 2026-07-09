@@ -1,3 +1,8 @@
+---
+sidebar_custom_props:
+  image: /img/projects-docs/juice-shop.png
+---
+
 # Juice Shop Master
 
 ## Description

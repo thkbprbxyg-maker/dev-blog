@@ -1,3 +1,8 @@
+---
+sidebar_custom_props:
+  image: /img/projects-docs/minecraft.png
+---
+
 # Minecraft Server
 
 ## Description

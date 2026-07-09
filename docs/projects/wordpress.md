@@ -1,3 +1,8 @@
+---
+sidebar_custom_props:
+  image: /img/projects-docs/wordpress.png
+---
+
 # WordPress + MariaDB (Docker Compose)
 
 ## Description
